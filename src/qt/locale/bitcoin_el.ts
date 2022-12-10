@@ -2282,10 +2282,10 @@ ID Συναλλαγής: %1</translation>
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 satoshis.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 atoms per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 atoms.</source>
         <translation>Καθορίστε μια προσαρμοσμένη χρέωση ανά kB (1.000 bytes) του εικονικού μεγέθους της συναλλαγής.
 
-Σημείωση: Δεδομένου ότι η χρέωση υπολογίζεται ανά βάση, η αμοιβή "100 satoshis ανά kB" για ένα μέγεθος συναλλαγής 500 bytes (το μισό του 1 kB) θα αποφέρει τέλος μόνο 50 satoshis.</translation>
+Σημείωση: Δεδομένου ότι η χρέωση υπολογίζεται ανά βάση, η αμοιβή "100 atoms ανά kB" για ένα μέγεθος συναλλαγής 500 bytes (το μισό του 1 kB) θα αποφέρει τέλος μόνο 50 atoms.</translation>
     </message>
     <message>
         <source>per kilobyte</source>

@@ -467,7 +467,7 @@ was already being broken by the move to descriptors.
   command line setting. The wallet will already fail to create transactions
   with fees higher than `-maxtxfee`. (#18467)
 
-- A new `fee_rate` parameter/option denominated in satoshis per vbyte (sat/vB)
+- A new `fee_rate` parameter/option denominated in atoms per vbyte (sat/vB)
   is introduced to the `sendtoaddress`, `sendmany`, `fundrawtransaction` and
   `walletcreatefundedpsbt` RPCs as well as to the experimental new `send`
   RPC. The legacy `feeRate` option in `fundrawtransaction` and
@@ -676,7 +676,7 @@ Tests
 - #19441 walletdb: Don't reinitialize desc cache with multiple cache entries (achow101)
 - #18907 walletdb: Don't remove database transaction logs and instead error (achow101)
 - #19334 Introduce WalletDatabase abstract class (achow101)
-- #19335 Cleanup and separate BerkeleyDatabase and BerkeleyBatch (achow101)
+- #19435 Cleanup and separate BerkeleyDatabase and BerkeleyBatch (achow101)
 - #19102 Introduce and use DummyDatabase instead of dummy BerkeleyDatabase (achow101)
 - #19568 Wallet should not override signing errors (fjahr)
 - #17204 Do not turn `OP_1NEGATE` in scriptSig into `0x0181` in signing code (sipa) (meshcollider)

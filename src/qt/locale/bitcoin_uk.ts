@@ -2408,7 +2408,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
-Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 satoshis.</source>
+Note:  Since the fee is calculated on a per-byte basis, a fee of "100 atoms per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 atoms.</source>
         <translation>Вкажіть комісію за кБ (1000 байт) віртуального розміру транзакції.
 
 Примітка: Оскільки комісія нараховується за байт, комісія "100 сатоші за кБ" для транзакції розміром 500 байт (половина 1 кБ) в результаті дасть комісію тільки 50 сатоші.</translation>

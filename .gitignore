@@ -2,17 +2,17 @@
 
 *.exe
 *.pdb
-src/litecoin
-src/litecoind
-src/litecoin-cli
-src/litecoin-gui
-src/litecoin-node
-src/litecoin-tx
-src/litecoin-wallet
+src/metaworldcoin
+src/metaworldcoind
+src/metaworldcoin-cli
+src/metaworldcoin-gui
+src/metaworldcoin-node
+src/metaworldcoin-tx
+src/metaworldcoin-wallet
 src/test/fuzz/*
 !src/test/fuzz/*.*
-src/test/test_litecoin
-src/qt/test/test_litecoin-qt
+src/test/test_metaworldcoin
+src/qt/test/test_metaworldcoin-qt
 
 # autoreconf
 Makefile.in
@@ -94,8 +94,8 @@ src/qt/bitcoin-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/litecoin-qt
-Litecoin-Qt.app
+src/qt/metaworldcoin-qt
+Metaworldcoin-Qt.app
 background.tiff*
 
 # Qt Creator
@@ -103,7 +103,7 @@ Makefile.am.user
 
 # Unit-tests
 Makefile.test
-litecoin-qt_test
+metaworldcoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -118,7 +118,7 @@ releases
 *.gcno
 *.gcda
 /*.info
-test_litecoin.coverage/
+test_metaworldcoin.coverage/
 total.coverage/
 fuzz.coverage/
 coverage_percent.txt

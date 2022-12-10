@@ -229,7 +229,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         dec_tx  = self.nodes[2].decoderawtransaction(rawtx)
         assert_equal(utx['txid'], dec_tx['vin'][0]['txid'])
 
-        assert_raises_rpc_error(-5, "Change address must be a valid litecoin address", self.nodes[2].fundrawtransaction, rawtx, {'changeAddress':'foobar'})
+        assert_raises_rpc_error(-5, "Change address must be a valid metaworldcoin address", self.nodes[2].fundrawtransaction, rawtx, {'changeAddress':'foobar'})
 
     def test_valid_change_address(self):
         self.log.info("Test fundrawtxn with a provided change address")
@@ -713,7 +713,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         wwatch.unloadwallet()
 
     def test_option_feerate(self):
-        self.log.info("Test fundrawtxn with explicit fee rates (fee_rate sat/vB and feeRate LTC/kvB)")
+        self.log.info("Test fundrawtxn with explicit fee rates (fee_rate sat/vB and feeRate MWC/kvB)")
         node = self.nodes[3]
         # Make sure there is exactly one input so coin selection can't skew the result.
         assert_equal(len(self.nodes[3].listunspent(1)), 1)
@@ -739,7 +739,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         assert_fee_amount(result5['fee'], count_bytes(result5['hex']), 0)
         assert_fee_amount(result6['fee'], count_bytes(result6['hex']), 0)
 
-        # With no arguments passed, expect fee of 141 satoshis.
+        # With no arguments passed, expect fee of 141 atoms.
         assert_approx(node.fundrawtransaction(rawtx)["fee"], vexp=0.00000141, vspan=0.00000001)
         # Expect fee to be 10,000x higher when an explicit fee rate 10,000x greater is specified.
         result = node.fundrawtransaction(rawtx, {"fee_rate": 10000})
@@ -779,7 +779,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         node.fundrawtransaction(rawtx, {"feeRate": 0.00000999, "add_inputs": True})
 
         self.log.info("- raises RPC error if both feeRate and fee_rate are passed")
-        assert_raises_rpc_error(-8, "Cannot specify both fee_rate (sat/vB) and feeRate (LTC/kvB)",
+        assert_raises_rpc_error(-8, "Cannot specify both fee_rate (sat/vB) and feeRate (MWC/kvB)",
             node.fundrawtransaction, rawtx, {"fee_rate": 0.1, "feeRate": 0.1, "add_inputs": True})
 
         self.log.info("- raises RPC error if both feeRate and estimate_mode passed")
@@ -891,7 +891,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         assert_equal(share[2], share[3])
 
         # Output 0 takes at least as much share of the fee, and no more than 2
-        # satoshis more, than outputs 2 and 3.
+        # atoms more, than outputs 2 and 3.
         assert_greater_than_or_equal(share[0], share[2])
         assert_greater_than_or_equal(share[2] + Decimal(2e-8), share[0])
 

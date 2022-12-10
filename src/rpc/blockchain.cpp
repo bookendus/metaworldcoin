@@ -1273,8 +1273,8 @@ static RPCHelpMan gettxout()
                                 {RPCResult::Type::STR_HEX, "hex", ""},
                                 {RPCResult::Type::NUM, "reqSigs", "Number of required signatures"},
                                 {RPCResult::Type::STR_HEX, "type", "The type, eg pubkeyhash"},
-                                {RPCResult::Type::ARR, "addresses", "array of litecoin addresses",
-                                    {{RPCResult::Type::STR, "address", "litecoin address"}}},
+                                {RPCResult::Type::ARR, "addresses", "array of metaworldcoin addresses",
+                                    {{RPCResult::Type::STR, "address", "metaworldcoin address"}}},
                             }},
                         {RPCResult::Type::BOOL, "coinbase", "Coinbase or not"},
                     }},
@@ -1951,7 +1951,7 @@ static constexpr size_t PER_UTXO_OVERHEAD = sizeof(COutPoint) + sizeof(uint32_t)
 static RPCHelpMan getblockstats()
 {
     return RPCHelpMan{"getblockstats",
-                "\nCompute per block statistics for a given window. All amounts are in satoshis.\n"
+                "\nCompute per block statistics for a given window. All amounts are in atoms.\n"
                 "It won't work for some heights with pruning.\n",
                 {
                     {"hash_or_height", RPCArg::Type::NUM, RPCArg::Optional::NO, "The block hash or height of the target block", "", {"", "string or numeric"}},
@@ -1966,10 +1966,10 @@ static RPCHelpMan getblockstats()
             RPCResult::Type::OBJ, "", "",
             {
                 {RPCResult::Type::NUM, "avgfee", "Average fee in the block"},
-                {RPCResult::Type::NUM, "avgfeerate", "Average feerate (in satoshis per virtual byte)"},
+                {RPCResult::Type::NUM, "avgfeerate", "Average feerate (in atoms per virtual byte)"},
                 {RPCResult::Type::NUM, "avgtxsize", "Average transaction size"},
                 {RPCResult::Type::STR_HEX, "blockhash", "The block hash (to check for potential reorgs)"},
-                {RPCResult::Type::ARR_FIXED, "feerate_percentiles", "Feerates at the 10th, 25th, 50th, 75th, and 90th percentile weight unit (in satoshis per virtual byte)",
+                {RPCResult::Type::ARR_FIXED, "feerate_percentiles", "Feerates at the 10th, 25th, 50th, 75th, and 90th percentile weight unit (in atoms per virtual byte)",
                 {
                     {RPCResult::Type::NUM, "10th_percentile_feerate", "The 10th percentile feerate"},
                     {RPCResult::Type::NUM, "25th_percentile_feerate", "The 25th percentile feerate"},
@@ -1980,13 +1980,13 @@ static RPCHelpMan getblockstats()
                 {RPCResult::Type::NUM, "height", "The height of the block"},
                 {RPCResult::Type::NUM, "ins", "The number of inputs (excluding coinbase)"},
                 {RPCResult::Type::NUM, "maxfee", "Maximum fee in the block"},
-                {RPCResult::Type::NUM, "maxfeerate", "Maximum feerate (in satoshis per virtual byte)"},
+                {RPCResult::Type::NUM, "maxfeerate", "Maximum feerate (in atoms per virtual byte)"},
                 {RPCResult::Type::NUM, "maxtxsize", "Maximum transaction size"},
                 {RPCResult::Type::NUM, "medianfee", "Truncated median fee in the block"},
                 {RPCResult::Type::NUM, "mediantime", "The block median time past"},
                 {RPCResult::Type::NUM, "mediantxsize", "Truncated median transaction size"},
                 {RPCResult::Type::NUM, "minfee", "Minimum fee in the block"},
-                {RPCResult::Type::NUM, "minfeerate", "Minimum feerate (in satoshis per virtual byte)"},
+                {RPCResult::Type::NUM, "minfeerate", "Minimum feerate (in atoms per virtual byte)"},
                 {RPCResult::Type::NUM, "mintxsize", "Minimum transaction size"},
                 {RPCResult::Type::NUM, "outs", "The number of outputs"},
                 {RPCResult::Type::NUM, "subsidy", "The block subsidy"},
@@ -2143,7 +2143,7 @@ static RPCHelpMan getblockstats()
             minfee = std::min(minfee, txfee);
             totalfee += txfee;
 
-            // New feerate uses satoshis per virtual byte instead of per serialized byte
+            // New feerate uses atoms per virtual byte instead of per serialized byte
             CAmount feerate = weight ? (txfee * WITNESS_SCALE_FACTOR) / weight : 0;
             if (do_feerate_percentiles) {
                 feerate_array.emplace_back(std::make_pair(feerate, weight));

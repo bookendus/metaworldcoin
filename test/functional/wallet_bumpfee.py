@@ -65,7 +65,7 @@ class BumpFeeTest(BitcoinTestFramework):
         peer_node, rbf_node = self.nodes
         rbf_node_address = rbf_node.getnewaddress()
 
-        # fund rbf node with 10 coins of 0.001 btc (100,000 satoshis)
+        # fund rbf node with 10 coins of 0.001 btc (100,000 atoms)
         self.log.info("Mining blocks...")
         peer_node.generate(110)
         self.sync_all()
@@ -137,7 +137,7 @@ class BumpFeeTest(BitcoinTestFramework):
         for k, v in {"number": 42, "object": {"foo": "bar"}}.items():
             assert_raises_rpc_error(-3, "Expected type string for estimate_mode, got {}".format(k),
                 rbf_node.bumpfee, rbfid, {"estimate_mode": v})
-        for mode in ["foo", Decimal("3.1415"), "sat/B", "LTC/kB"]:
+        for mode in ["foo", Decimal("3.1415"), "sat/B", "MWC/kB"]:
             assert_raises_rpc_error(-8, 'Invalid estimate_mode parameter, must be one of: "unset", "economical", "conservative"',
                 rbf_node.bumpfee, rbfid, {"estimate_mode": mode})
 
