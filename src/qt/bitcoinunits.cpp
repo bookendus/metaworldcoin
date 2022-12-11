@@ -45,7 +45,7 @@ QString BitcoinUnits::longName(int unit)
     case BTC: return QString("MWC");
     case mBTC: return QString("millms");
     case uBTC: return QString("microms");
-    case SAT: return QString("liteoshi");
+    case SAT: return QString("atoms");
     default: return QString("???");
     }
 }
@@ -67,7 +67,7 @@ QString BitcoinUnits::description(int unit)
     case BTC: return QString("Metaworldcoins");
     case mBTC: return QString("Millms (1 / 1" THIN_SP_UTF8 "000)");
     case uBTC: return QString("Photons (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case SAT: return QString("Liteoshis (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case SAT: return QString("Atoms (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
