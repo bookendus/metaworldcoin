@@ -823,8 +823,8 @@ EOF
 	    GUESS=$UNAME_MACHINE-unknown-osf1
 	fi
 	;;
-    parisc*:Lites*:*:*)
-	GUESS=hppa1.1-hp-lites
+    parisc*:Millms*:*:*)
+	GUESS=hppa1.1-hp-millms
 	;;
     C1*:ConvexOS:*:* | convex:ConvexOS:C1*:*)
 	GUESS=c1-convex-bsd

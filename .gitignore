@@ -1,14 +1,14 @@
 *.tar.gz
 
 *.exe
-src/litecoin
-src/litecoind
-src/litecoin-cli
-src/litecoin-tx
-src/litecoin-wallet
-src/test/test_litecoin
-src/test/test_litecoin_fuzzy
-src/qt/test/test_litecoin-qt
+src/metaworldcoin
+src/metaworldcoind
+src/metaworldcoin-cli
+src/metaworldcoin-tx
+src/metaworldcoin-wallet
+src/test/test_metaworldcoin
+src/test/test_metaworldcoin_fuzzy
+src/qt/test/test_metaworldcoin-qt
 
 # autoreconf
 Makefile.in
@@ -45,11 +45,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/bitcoin-qt.config
-src/qt/bitcoin-qt.creator
-src/qt/bitcoin-qt.creator.user
-src/qt/bitcoin-qt.files
-src/qt/bitcoin-qt.includes
+src/qt/metaworldcoin-qt.config
+src/qt/metaworldcoin-qt.creator
+src/qt/metaworldcoin-qt.creator.user
+src/qt/metaworldcoin-qt.files
+src/qt/metaworldcoin-qt.includes
 
 .deps
 .dirstamp
@@ -83,13 +83,13 @@ src/qt/bitcoin-qt.includes
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-litecoin-qt
-litecoin-Qt.app
+metaworldcoin-qt
+metaworldcoin-Qt.app
 background.tiff*
 
 # Unit-tests
 Makefile.test
-litecoin-qt_test
+metaworldcoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -101,7 +101,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_litecoin.coverage/
+test_metaworldcoin.coverage/
 total.coverage/
 coverage_percent.txt
 

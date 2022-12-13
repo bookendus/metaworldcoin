@@ -105,7 +105,7 @@ public:
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb6;
         pchMessageStart[3] = 0xdb;
-        nDefaultPort = 9333;
+        nDefaultPort = 9433;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 22;
         m_assumed_chain_state_size = 3;
@@ -120,10 +120,10 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("seed-a.litecoin.loshan.co.uk");
+        vSeeds.emplace_back("seed-a.metaworldcoin.loshan.co.uk");
         vSeeds.emplace_back("dnsseed.thrasher.io");
-        vSeeds.emplace_back("dnsseed.litecointools.com");
-        vSeeds.emplace_back("dnsseed.litecoinpool.org");
+        vSeeds.emplace_back("dnsseed.metaworldcointools.com");
+        vSeeds.emplace_back("dnsseed.metaworldcoinpool.org");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,48);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -217,7 +217,7 @@ public:
         pchMessageStart[1] = 0xd2;
         pchMessageStart[2] = 0xc8;
         pchMessageStart[3] = 0xf1;
-        nDefaultPort = 19335;
+        nDefaultPort = 19435;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 1;
@@ -230,8 +230,8 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("testnet-seed.litecointools.com");
-        vSeeds.emplace_back("seed-b.litecoin.loshan.co.uk");
+        vSeeds.emplace_back("testnet-seed.metaworldcointools.com");
+        vSeeds.emplace_back("seed-b.metaworldcoin.loshan.co.uk");
         vSeeds.emplace_back("dnsseed-testnet.thrasher.io");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
